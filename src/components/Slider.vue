@@ -2,10 +2,9 @@
 <template>
   <v-parallax
     class="load"
-    dark
   >
     <v-layout
-      align-center
+      
       column
       justify-center
     >
