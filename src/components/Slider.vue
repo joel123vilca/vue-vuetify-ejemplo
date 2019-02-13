@@ -1,36 +1,52 @@
 
 <template>
-  <v-parallax
-    class="load"
-  >
-    <v-layout
-      
-      column
-      justify-center
+   <v-carousel hide-delimiters class="slider">
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
     >
-        <img src="../../public/Blanco.png" class="logo">
-      <h1 class="display-2 font-weight-thin mb-3 ">Estamos en proceso de desarrollo ...</h1>
-    </v-layout>
-  </v-parallax>
+     <v-flex>
+        <h3 class="display-3">{{item.title}}</h3>
+        <span class="subheading">Lorem Ipsum is simply dummy text</span>
+        <h3 class="display-3">US${{item.precio}}</h3>
+        <v-btn
+            class="mx-0"
+            outline
+          >
+            Suscribirme
+          </v-btn>
+      </v-flex>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 <script>
   export default {
+    data () {
+      return {
+        items: [
+          {
+            title:'Membresia Elite',
+            precio:'5',
+            src: 'https://staticuestudio.blob.core.windows.net/buhomag/2017/02/27193529/apuestas-deportivas.jpg?auto=compress,format'
+          },
+          {
+            title:'Membresia Gold',
+            precio:'7',
+            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+          },
+          {
+            title:'Membresia Premium',
+            precio:'9',
+            src: 'http://astorgaredaccion.com/upload/img/periodico/img_30235.jpg'
+          }
+        ]
+      }
+    }
   }
 </script>
 <style>
-.load{
-  background-color: rgb(29, 46, 70);
-}
-.logo{
-  height: 40%;
-  width: 40%;
-}
-@media only screen and (max-width: 600px) {
-   
-  .load .logo{
-  height: auto;
-  width: 100%;
+  .slider{
+    margin-top: 1px;
   }
-}
 </style>
-

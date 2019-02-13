@@ -38,6 +38,7 @@
     </v-toolbar>
     <v-content>
       <Slider/>
+      <Plan/>
     </v-content>
     <Footer/>
   </v-app>
@@ -47,12 +48,14 @@
 
 import Footer from './components/Footer';
 import Slider from './components/Slider';
+import Plan from './components/Plan';
 
 export default {
   name: 'App',
   components: {
     Footer,
     Slider,
+    Plan,
   },
   data () {
       return {
@@ -61,7 +64,8 @@ export default {
         menuItems: [
           { title: 'Home', path: '/home', icon: 'home' },
           { title: 'Sign Up', path: '/signup', icon: 'face' },
-          { title: 'Sign In', path: '/signin', icon: 'lock_open' }
+          { title: 'Sign In', path: '/signin', icon: 'lock_open' },
+          { title: 'Login', path: '/login', icon: 'face' }
         ]
       }
     }
