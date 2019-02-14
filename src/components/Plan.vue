@@ -1,5 +1,5 @@
 <template>
-  <v-timeline align-top class="deep-purple ">
+  <v-timeline align-top class="deep-purple">
     <v-timeline-item
       v-for="(item, i) in items"
       :key="i"
@@ -49,4 +49,7 @@
     })
   }
 </script>
+<style>
+</style>
+
 

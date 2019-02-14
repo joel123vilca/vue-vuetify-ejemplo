@@ -1,18 +1,21 @@
 
 <template>
-   <v-carousel hide-delimiters class="slider">
+   <v-carousel  hide-delimiters class="slider" style="height:100vh">
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
       :src="item.src"
+      style="height:100vh"
     >
      <v-flex>
-        <h3 class="display-3">{{item.title}}</h3>
-        <span class="subheading">Lorem Ipsum is simply dummy text</span>
-        <h3 class="display-3">US${{item.precio}}</h3>
+        <h3 class="display-3 white--text">{{item.title}}</h3>
+        <span class="subheading white--text">Lorem Ipsum is simply dummy text</span>
+        <h3 class="display-3 white--text">US${{item.precio}}</h3>
         <v-btn
-            class="mx-0"
-            outline
+            large
+            round 
+            color="primary" 
+            dark
           >
             Suscribirme
           </v-btn>
@@ -45,8 +48,3 @@
     }
   }
 </script>
-<style>
-  .slider{
-    margin-top: 1px;
-  }
-</style>
