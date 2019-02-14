@@ -12,7 +12,7 @@
         dark
       >
         <v-card-title class="title">{{ item.title }}</v-card-title>
-        <v-card-text class="white text--primary">
+        <v-card-text class="white text--primary" >
           <p>Lorem Ipsum is simply dummy textof the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
           <v-btn
             :color="item.color"
@@ -48,8 +48,5 @@
       ]
     })
   }
-</script>
-<style>
-</style>
-
+</script> 
 

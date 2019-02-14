@@ -7,9 +7,9 @@
       :src="item.src"
       style="height:100vh"
     >
-     <v-flex>
+       <v-layout class="texto" align-start justify-center column fill-height >
         <h3 class="display-3 white--text">{{item.title}}</h3>
-        <span class="subheading white--text">Lorem Ipsum is simply dummy text</span>
+        <span class=" subheading white--text">Lorem Ipsum is simply dummy text</span>
         <h3 class="display-3 white--text">US${{item.precio}}</h3>
         <v-btn
             large
@@ -19,7 +19,9 @@
           >
             Suscribirme
           </v-btn>
-      </v-flex>
+
+       </v-layout>
+
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -48,3 +50,9 @@
     }
   }
 </script>
+<style>
+.texto{
+  margin-left: 100px;
+}
+</style>
+
