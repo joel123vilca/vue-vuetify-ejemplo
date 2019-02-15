@@ -1,12 +1,12 @@
 import Slider from '@/components/Slider.vue';
-import Login from '@/components/Login.vue';
 import Elite from '@/components/Elite.vue';
 import Creditos from '@/components/Creditos.vue';
 import Planes from '@/components/Planes.vue';
-import Register from '@/components/Register.vue';
+import Register from '@/components/ModalRegister.vue';
 import Example from '@/components/Sgc/Example.vue';
 import Gold from '@/components/Gold.vue';
 import Modal from '@/components/ModalLogin.vue';
+import Test from '@/components/Test.vue';
 export default [
     {
         path:'/',
@@ -14,14 +14,14 @@ export default [
         component: Slider
     },
     {
+        path:'/Test',
+        name:'test',
+        component: Test
+    },
+    {
         path:'/modal',
         name:'modal',
         component: Modal
-    },
-    {
-        path:'/login',
-        name:'login',
-        component: Login
     },
     {
         path:'/register',

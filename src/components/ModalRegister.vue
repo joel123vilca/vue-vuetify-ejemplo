@@ -1,6 +1,11 @@
 <template>
-  <v-layout class="login"  grid-list-xl text-xs-center style="height:110vh">
-    <v-flex xs12 sm6 offset-sm3>
+  <v-layout style="height:100vh">
+    <v-dialog v-model="dialog" persistent>
+      <!-- <v-btn slot="activator" color="primary" dark>Open Dialog</v-btn> -->
+      <v-card>
+        <br>
+        <br>
+         <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-toolbar color="light-blue darken-1" dark>
             <v-spacer></v-spacer>
@@ -98,15 +103,23 @@
           </v-stepper>
       </v-card>
     </v-flex>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <router-link to="/" tag="span" style="cursor: pointer">
+          <v-btn color="blue darken-1" flat @click="dialog = false" >Close</v-btn>
+          </router-link>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-layout>
 </template>
 
 <script>
-  import Vue from 'vue'
-export default {
-    data () {
-      return {
-           step:1,
+    import Slider from './Slider';
+  export default {
+    data: () => ({
+      dialog: true,
+      step:1,
       registration:{
         email:null,
         token:null,
@@ -122,21 +135,9 @@ export default {
         ],
         date: new Date().toISOString().substr(0, 10),
         menu: false,
-      }
-    },
-    mounted () {
-      this.$validator.localize('en', this.dictionary)
-    },
-    methods: {
-      submit () {
-        this.$validator.validateAll()
+    }),
+    components:{
+        Slider
     }
   }
-}
 </script>
-<style>
-.login{
-    margin-top:1%;
-}
-</style>
-
