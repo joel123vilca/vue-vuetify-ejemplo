@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="login"  grid-list-xl text-xs-center>
+  <v-layout class="login"  grid-list-xl text-xs-center style="height:100vh">
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-toolbar color="light-blue darken-1" dark>

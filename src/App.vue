@@ -36,29 +36,6 @@
           <v-icon left>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
-        <v-menu
-          transition="slide-x-transition"
-          bottom
-          right
-        >
-      <v-btn
-        slot="activator"
-        class="white--text"
-        dark
-      >
-      <v-icon left >face</v-icon>
-        Iniciar Sesion
-      </v-btn>
-
-      <v-list>
-        <v-list-tile>
-          <v-list-tile-title>Mi cuenta</v-list-tile-title>
-        </v-list-tile>
-        <v-list-tile>
-          <v-list-tile-title>Cerrar Sesion</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-menu>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
@@ -82,11 +59,11 @@ export default {
          appTitle: 'Awesome App',
         sidebar: false,
         menuItems: [
-          { title: 'Home', path: '/', icon: 'home' },
           { title: 'Suscribete', path: '/suscribete', icon: 'play_circle_filled' },
           { title: 'Gold', path: '/Gold', icon: 'shop' },
           { title: 'Elite', path: '/Elite', icon: 'shop' },
-          { title: 'Creditos', path: '/Creditos', icon: 'folder_special' }
+          { title: 'Creditos', path: '/Creditos', icon: 'folder_special' },
+          { title: 'Iniciar Sesion', path: '/Login', icon: 'face' }
         ],
       }
     }

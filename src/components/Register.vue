@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="login"  grid-list-xl text-xs-center>
+  <v-layout class="login"  grid-list-xl text-xs-center style="height:110vh">
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-toolbar color="light-blue darken-1" dark>
@@ -19,35 +19,69 @@
     <v-text-field
       v-model="name"
       v-validate="'required|max:10'"
-      :counter="10"
-      :error-messages="errors.collect('name')"
-      label="Name"
-      data-vv-name="name"
+      :counter="30"
+      label="Nombre"
+      data-vv-name="Nombre"
+      required
+    ></v-text-field>
+    <v-text-field
+      v-model="lastname"
+      v-validate="'required|max:10'"
+      :counter="30"
+      label="Apellidos"
+      data-vv-name="Apellidos"
       required
     ></v-text-field>
     <v-text-field
       v-model="email"
       v-validate="'required|email'"
-      :error-messages="errors.collect('email')"
       label="E-mail"
       data-vv-name="email"
       required
     ></v-text-field>
-    <v-select
-      v-model="select"
-      v-validate="'required'"
-      :items="items"
-      :error-messages="errors.collect('select')"
-      label="Select"
-      data-vv-name="select"
+     <v-select
+        :items="select"
+        label="Pais"
+        item-value="text"
+      ></v-select>
+      <v-text-field
+      v-model="Telefono"
+      v-validate="'required|max:10'"
+      :counter="9"
+      label="Numero de Telefono"
+      data-vv-name="Telefono"
       required
-    ></v-select>
+    ></v-text-field>
+    <v-menu
+        ref="menu"
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        :return-value.sync="date"
+        lazy
+        transition="scale-transition"
+        offset-y
+        full-width
+        min-width="290px"
+      >
+        <v-text-field
+          slot="activator"
+          v-model="date"
+          label="Picker in menu"
+          prepend-icon="event"
+          readonly
+        ></v-text-field>
+        <v-date-picker v-model="date" no-title scrollable>
+          <v-spacer></v-spacer>
+          <v-btn flat color="primary" @click="menu = false">Cancel</v-btn>
+          <v-btn flat color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+        </v-date-picker>
+      </v-menu>
     <v-checkbox
       v-model="checkbox"
       v-validate="'required'"
-      :error-messages="errors.collect('checkbox')"
       value="1"
-      label="Option"
+      label="Acepto Terminos y Condiciones"
       data-vv-name="checkbox"
       type="checkbox"
       required
@@ -69,9 +103,6 @@
 
 <script>
   import Vue from 'vue'
-  import VeeValidate from 'vee-validate'
-
-  Vue.use(VeeValidate)
 export default {
     data () {
       return {
@@ -80,6 +111,17 @@ export default {
         email:null,
         token:null,
       },
+      select: [
+          { text: 'Peru' },
+          { text: 'Chile' },
+          { text: 'Ecuador' },
+          { text: 'Argentina' },
+          { text: 'Colombia' },
+          { text: 'Bolivia' },
+          { text: 'Brasil' }
+        ],
+        date: new Date().toISOString().substr(0, 10),
+        menu: false,
       }
     },
     mounted () {
@@ -94,7 +136,7 @@ export default {
 </script>
 <style>
 .login{
-    margin-top:3%;
+    margin-top:1%;
 }
 </style>
 

@@ -1,8 +1,11 @@
 import Slider from '@/components/Slider.vue';
 import Login from '@/components/Login.vue';
-import Servicios from '@/components/Servicios.vue';
+import Elite from '@/components/Elite.vue';
 import Creditos from '@/components/Creditos.vue';
 import Planes from '@/components/Planes.vue';
+import Register from '@/components/Register.vue';
+import Example from '@/components/Sgc/Example.vue';
+import Gold from '@/components/Gold.vue';
 
 export default [
     {
@@ -16,14 +19,24 @@ export default [
         component: Login
     },
     {
+        path:'/register',
+        name:'register',
+        component: Register
+    },
+    {
+        path:'/example',
+        name:'example',
+        component: Example
+    },
+    {
         path:'/gold',
         name:'gold',
-        component: Servicios
+        component: Gold
     },
     {
         path:'/elite',
         name:'elite',
-        component: Servicios
+        component: Elite
     },
     {
         path:'/creditos',
