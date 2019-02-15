@@ -1,5 +1,6 @@
 
 <template>
+    <div>
    <v-carousel  hide-delimiters class="slider" style="height:100vh">
     <v-carousel-item
       v-for="(item,i) in items"
@@ -19,13 +20,14 @@
           >
             Suscribirme
           </v-btn>
-
        </v-layout>
-
     </v-carousel-item>
   </v-carousel>
+      <Planes/>
+    </div>
 </template>
 <script>
+import Planes from './Planes'
   export default {
     data () {
       return {
@@ -47,7 +49,10 @@
           }
         ]
       }
-    }
+    },
+    components: {
+    Planes,
+  }
   }
 </script>
 <style>

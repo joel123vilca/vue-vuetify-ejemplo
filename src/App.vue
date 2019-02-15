@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="sidebar" class="grey darken-4" app>
+    <v-navigation-drawer v-model="sidebar" class="black darken-4" app>
       <v-list>
         <v-list-tile
           v-for="item in menuItems"
@@ -33,14 +33,36 @@
           :key="item.title"
           :to="item.path"
           class="white--text">
-          <v-icon left >{{ item.icon }}</v-icon>
+          <v-icon left>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
+        <v-menu
+          transition="slide-x-transition"
+          bottom
+          right
+        >
+      <v-btn
+        slot="activator"
+        class="white--text"
+        dark
+      >
+      <v-icon left >face</v-icon>
+        Iniciar Sesion
+      </v-btn>
+
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-title>Mi cuenta</v-list-tile-title>
+        </v-list-tile>
+        <v-list-tile>
+          <v-list-tile-title>Cerrar Sesion</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-menu>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <Slider/>
-      <Plan/>
     </v-content>
     <Footer/>
   </v-app>
@@ -50,14 +72,16 @@
 
 import Footer from './components/Footer';
 import Slider from './components/Slider';
-import Plan from './components/Plan';
+import Login from './components/Login';
+import Servicios from './components/Servicios';
 
 export default {
   name: 'App',
   components: {
     Footer,
     Slider,
-    Plan,
+    Login,
+    Servicios
   },
   data () {
       return {
@@ -68,9 +92,8 @@ export default {
           { title: 'Suscribete', path: '/suscribete', icon: 'play_circle_filled' },
           { title: 'Gold', path: '/Gold', icon: 'shop' },
           { title: 'Elite', path: '/Elite', icon: 'shop' },
-          { title: 'Creditos', path: '/Creditos', icon: 'folder_special' },
-          { title: 'Iniciar Sesiòn', path: '/login', icon: 'face' }
-        ]
+          { title: 'Creditos', path: '/Creditos', icon: 'folder_special' }
+        ],
       }
     }
 }
