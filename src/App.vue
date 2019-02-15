@@ -25,6 +25,12 @@
           <img src="@/assets/Blanco.png" class="imagen"/>
         </router-link>
       </v-toolbar-title>
+      <v-toolbar-title>
+        <router-link to="/modallogin" tag="span" style="cursor: pointer">
+          <v-btn slot="activator" color="primary" dark>Open Dialog</v-btn>
+        </router-link>
+      </v-toolbar-title>
+      
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn
@@ -59,11 +65,12 @@ export default {
          appTitle: 'Awesome App',
         sidebar: false,
         menuItems: [
+          { title: 'Inicio', path: '/', icon: 'home' },
           { title: 'Suscribete', path: '/suscribete', icon: 'play_circle_filled' },
           { title: 'Gold', path: '/Gold', icon: 'shop' },
           { title: 'Elite', path: '/Elite', icon: 'shop' },
           { title: 'Creditos', path: '/Creditos', icon: 'folder_special' },
-          { title: 'Iniciar Sesion', path: '/Login', icon: 'face' }
+          { title: 'Iniciar Sesion', path: '/Modal', icon: 'face' }
         ],
       }
     }

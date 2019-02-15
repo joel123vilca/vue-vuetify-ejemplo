@@ -6,12 +6,17 @@ import Planes from '@/components/Planes.vue';
 import Register from '@/components/Register.vue';
 import Example from '@/components/Sgc/Example.vue';
 import Gold from '@/components/Gold.vue';
-
+import Modal from '@/components/ModalLogin.vue';
 export default [
     {
         path:'/',
         name:'slider',
         component: Slider
+    },
+    {
+        path:'/modal',
+        name:'modal',
+        component: Modal
     },
     {
         path:'/login',
