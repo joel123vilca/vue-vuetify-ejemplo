@@ -9,7 +9,7 @@
       style="height:100vh"
     >
        <v-layout class="texto" align-start justify-center column fill-height >
-        <h3 class="display-3 white--text">{{item.title}}</h3>
+        <h3 class="font-weight-black display-3 white--text">{{item.title}}</h3>
         <span class=" subheading white--text">Lorem Ipsum is simply dummy text</span>
         <h3 class="display-3 white--text">US${{item.precio}}</h3>
         <v-btn
@@ -23,11 +23,11 @@
        </v-layout>
     </v-carousel-item>
   </v-carousel>
-      <Planes/>
+      <inicio/>
     </div>
 </template>
 <script>
-import Planes from './Planes'
+import Inicio from './Inicio'
   export default {
     data () {
       return {
@@ -51,7 +51,7 @@ import Planes from './Planes'
       }
     },
     components: {
-    Planes,
+    Inicio,
   }
   }
 </script>

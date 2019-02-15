@@ -62,7 +62,8 @@
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
-      <Slider/>
+      <router-view>
+      </router-view>
     </v-content>
     <Footer/>
   </v-app>
@@ -71,24 +72,17 @@
 <script>
 
 import Footer from './components/Footer';
-import Slider from './components/Slider';
-import Login from './components/Login';
-import Servicios from './components/Servicios';
-
 export default {
   name: 'App',
   components: {
     Footer,
-    Slider,
-    Login,
-    Servicios
   },
   data () {
       return {
          appTitle: 'Awesome App',
         sidebar: false,
         menuItems: [
-          { title: 'Home', path: '/home', icon: 'home' },
+          { title: 'Home', path: '/', icon: 'home' },
           { title: 'Suscribete', path: '/suscribete', icon: 'play_circle_filled' },
           { title: 'Gold', path: '/Gold', icon: 'shop' },
           { title: 'Elite', path: '/Elite', icon: 'shop' },
