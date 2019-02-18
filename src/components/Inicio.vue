@@ -36,7 +36,7 @@
           {
             title:'Membresia Elite',
             precio:'24/7',
-            src: 'http://www.bejarfm.es/wp-content/uploads/2018/07/Apuestas.jpg'
+            src: '../assets/premium.webp'
           },
           {
             title:'Membresia Gold',

@@ -1,7 +1,6 @@
 <template>
   <v-layout style="height:100vh">
-    <v-dialog v-model="dialog" persistent>
-      <!-- <v-btn slot="activator" color="primary" dark>Open Dialog</v-btn> -->
+    <v-dialog v-model="dialog" persistent fullscreen hide-overlay transition="dialog-bottom-transition">   <!-- <v-btn slot="activator" color="primary" dark>Open Dialog</v-btn> -->
       <v-card>
         <br>
         <br>
@@ -14,9 +13,9 @@
         </v-toolbar>
           <v-stepper v-model="step">
             <v-stepper-header>
-              <v-stepper-step step="1" :complete="step > 1">Datos</v-stepper-step>
+              <v-stepper-step step="1" :complete="step > 1">Paso 1</v-stepper-step>
               <v-divider></v-divider>
-              <v-stepper-step step="2" :complete="step > 2">Verificaciòn  Token</v-stepper-step>
+              <v-stepper-step step="2" :complete="step > 2">Paso 2</v-stepper-step>
             </v-stepper-header>
             <v-stepper-items>
               <v-stepper-content step="1">
