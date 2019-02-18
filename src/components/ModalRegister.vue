@@ -12,11 +12,6 @@
           <v-spacer></v-spacer>
         </v-toolbar>
           <v-stepper v-model="step">
-            <v-stepper-header>
-              <v-stepper-step step="1" :complete="step > 1">Paso 1</v-stepper-step>
-              <v-divider></v-divider>
-              <v-stepper-step step="2" :complete="step > 2">Paso 2</v-stepper-step>
-            </v-stepper-header>
             <v-stepper-items>
               <v-stepper-content step="1">
     <form>
@@ -90,7 +85,7 @@
       type="checkbox"
       required
     ></v-checkbox>
-    <v-btn  color="primary" @click.native="step = 2">Next</v-btn>
+    <v-btn  color="primary" >Registrate</v-btn>
     <v-btn @click="clear">clear</v-btn>
   </form>
               </v-stepper-content>
@@ -105,7 +100,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <router-link to="/" tag="span" style="cursor: pointer">
-          <v-btn color="blue darken-1" flat @click="dialog = false" >Close</v-btn>
+          <v-btn color="blue darken-1" flat @click="dialog = false" >Salir</v-btn>
           </router-link>
         </v-card-actions>
       </v-card>

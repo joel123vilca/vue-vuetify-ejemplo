@@ -1,39 +1,46 @@
 <template>
-  <v-layout style="height:100vh">
-    <v-dialog v-model="dialog" persistent fullscreen hide-overlay transition="dialog-bottom-transition">
+  <v-layout style="height:100vh" color="grey lighten-1">
+    <v-dialog v-model="dialog"  persistent fullscreen hide-overlay transition="dialog-bottom-transition">
       <v-card>
         <br>
         <br>
         <v-flex xs12 sm6 offset-sm3>
       <v-card>
-        <v-toolbar color="indigo darken-4" dark>
-            <v-spacer></v-spacer>
-          <v-toolbar-title>Iniciar Sesion</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-          <v-stepper v-model="step">
-            <v-stepper-header>
-              <v-stepper-step step="1" :complete="step > 1">paso 1</v-stepper-step>
-              <v-divider></v-divider>
-              <v-stepper-step step="2" :complete="step > 2">paso 2</v-stepper-step>
-            </v-stepper-header>
-            <v-stepper-items>
-              <v-stepper-content step="1">
-                 <v-text-field label="Email" v-model="registration.email" required></v-text-field>
-                <v-btn color="primary" @click.native="step = 2">siguiente</v-btn>
-              </v-stepper-content>
-              <v-stepper-content step="2">
-                  <v-text-field label="Token Email" v-model="registration.token" required></v-text-field>
-                <v-btn color="primary" @click.native="step = 1">Ingresar</v-btn>
-              </v-stepper-content>
-            </v-stepper-items>
-          </v-stepper>
+   <v-layout row class="text-xs-center">
+      <v-flex xs3>
+        <v-card height="500px" width="800px"></v-card>
+      </v-flex>
+      <v-flex xs10 class="grey lighten-4">
+        <v-container style="position: relative;top: 1%;" class="text-xs-center">
+          <v-card flat>
+            <v-card-title primary-title>
+              <h4>Iniciar Sesiòn</h4>
+            </v-card-title>
+            <v-form>
+            <v-text-field prepend-icon="person" name="Username" label="Usuario"></v-text-field>
+            <v-text-field prepend-icon="lock" name="Password" label="contraseña" type="password"></v-text-field>
+            <v-card-actions>
+              <v-btn primary color="info" block>Ingresar</v-btn>
+            </v-card-actions>
+            <router-link :to="{ name: 'inicio'}">
+              ¿olvidates tu contraseña
+            </router-link>
+            </v-form>
+            <br>
+            <h6>¿Aun no tienes cuenta en GolPlay?</h6>
+            <v-card-actions>
+                <v-btn :to="{ name: 'register'}" primary large block>Registrate</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-container>
+      </v-flex>
+    </v-layout>
       </v-card>
     </v-flex>
         <v-card-actions>
           <v-spacer></v-spacer>
           <router-link to="/" tag="span" style="cursor: pointer">
-          <v-btn color="blue darken-1" flat @click="dialog = false" >Close</v-btn>
+          <v-btn color="blue darken-1" flat @click="dialog = false" >Salir</v-btn>
           </router-link>
         </v-card-actions>
       </v-card>
