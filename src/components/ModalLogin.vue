@@ -49,18 +49,12 @@
 </template>
 
 <script>
-    import Slider from './Slider';
   export default {
-    data: () => ({
-      dialog: true,
+    data (){
+      return {
+        dialog: true,
       step:1,
-      registration:{
-        email:null,
-        token:null,
-      },
-    }),
-    components:{
-        Slider
-    }
+      }
+    },
   }
 </script>

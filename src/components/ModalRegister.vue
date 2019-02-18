@@ -4,7 +4,7 @@
       <v-card>
         <br>
         <br>
-         <v-flex xs12 sm6 offset-sm3>
+         <v-flex xs12 sm6  md12 offset-sm3>
       <v-card>
         <v-toolbar color="light-blue darken-1" dark>
             <v-spacer></v-spacer>

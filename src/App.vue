@@ -70,7 +70,7 @@ export default {
           { title: 'Gold', path: '/Gold', icon: 'shop' },
           { title: 'Elite', path: '/Elite', icon: 'shop' },
           { title: 'Creditos', path: '/Creditos', icon: 'folder_special' },
-          { title: 'Iniciar Sesion', path: '/Modal', icon: 'face' }
+          { title: 'Iniciar Sesion', path: '/Login', icon: 'face' }
         ],
       }
     }
